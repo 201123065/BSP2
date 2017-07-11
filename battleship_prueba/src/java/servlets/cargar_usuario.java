@@ -44,8 +44,9 @@ public class cargar_usuario extends HttpServlet {
                 out.println("<title>CARGO</title>");            
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<a href=/>cu</a>");
+                out.println("<a href=crear_usuario.jsp>crear otro usuario</a>");
                 out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
+                out.println("<a href=/>Iniciar sesion</a>");
                 out.println("</body>");
                 out.println("</html>");
             }else{
