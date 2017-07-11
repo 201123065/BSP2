@@ -35,6 +35,15 @@ def eliminar_usuario():
 	usu = str(request.form['usuario'])
 	return usuario.eliminar(usu)
 
+@app.route('/login',methods=['POST'])
+def login_usuario():
+	usu = str(request.form['nombre'])
+	passwd = str(request.form['passwd'])
+	return usuario.login(usu,passwd)
+
+@app.route('/abb_user')
+def abb_user():
+	return usuario.graficar_usuario()
 
 
 

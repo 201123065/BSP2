@@ -33,13 +33,25 @@ public class logea extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            String usu = request.getParameter("nombre");
+            String pass = request.getParameter("passwd");
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
+            conexion cu = new conexion();
+            
+             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet logea</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println(cu.Login(usu, pass));
+            if(cu.Login(usu, pass).equals("V")){
+                out.println("<h1>SIMON ENTRO</h1>");
+            }
+            else{
+                out.println("<h1>anomano</h1>");
+            
+            }
             out.println("<h1>Servlet logea at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");

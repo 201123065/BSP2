@@ -76,5 +76,25 @@ public class conexion {
         return r+"";
     }
     
+    public String Login(String nombre2, String passwd){ 
+        RequestBody formBody = new FormEncodingBuilder()
+                .add("nombre", nombre2)
+                .add("passwd", passwd)
+                .build();
+        String r = getString("login", formBody); 
+        System.out.println(r + "---");
+       
+        return r+"";
+    }
+     public String abb_user(){ 
+        RequestBody formBody = new FormEncodingBuilder().build();
+         System.out.println("si.kpd2");
+        String r = getString("abb_user", formBody); 
+        System.out.println(r + "---");
+       
+        return r+"";
+    }
+    
+    
     
 }

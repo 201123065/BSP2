@@ -30,7 +30,7 @@ public final class crear_005fusuario_jsp extends org.apache.jasper.runtime.HttpJ
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html;charset=UTF8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -45,12 +45,17 @@ public final class crear_005fusuario_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("<html lang=\"en\">\n");
+      out.write("  <head>\n");
+      out.write("    <meta charset=\"utf-8\">\n");
+      out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
+      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("    <title>Bootstrap 101 Template</title>\n");
+      out.write("\n");
+      out.write("    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("   </head>\n");
+      out.write("  <body>\n");
       out.write("        <h1>Crear usuario</h1>\n");
       out.write("        <form action=\"crear_usuario\" nethod=\"post\">\n");
       out.write("        Nombre<input type=\"text\" name =\"nombre\" id=\"user\"/>\n");
@@ -58,6 +63,10 @@ public final class crear_005fusuario_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <input type=\"submit\" name=\"entrar\" value=\"Entrar\"/>\n");
       out.write("        </form>\n");
       out.write("    </body>\n");
+      out.write("    \n");
+      out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n");
+      out.write("     <script src=\"js/bootstrap.min.js\"></script>\n");
+      out.write("  </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -3,6 +3,7 @@ from nodoUser import nodoUser
 class Usuario():
 	def __init__(self):
 		self.raiz=None
+		self.cadena=None
 
 	def agregar(self,usuario,passwd,juego,su):
 		nuevo= nodoUser(usuario,passwd,False,juego,None,None,su)
@@ -125,6 +126,39 @@ class Usuario():
 			else:
 				temporal=temporal.der
 		return "F"
+
+	def login(self,usuario,passwd):
+		tmp=self.raiz
+		while tmp!=None:
+			print tmp.usuario
+			print usuario
+			print "---------"
+			print tmp.passwd
+			print passwd
+			if tmp.usuario==usuario and tmp.passwd==passwd:
+				tmp.loged=True
+				return "V"
+			elif tmp.usuario>usuario:
+				tmp=tmp.izq
+			else:
+				tmp=tmp.der
+		return "F"
+
+	def graficar_usuario(self):
+		temporal=self.raiz
+		self.cadena=""
+		print "entra"
+		return preden(tmp)
+
+	def preorden(tmp):
+		print "tambien aca"
+		if(tmp.izq!=None):
+			self.cadena=self.cadena+tmp.usuario+"->"+preorden(tmp.izq)+";\n"
+		if(tmp.der!=None):	
+			self.cadena=self.cadena+tmp.usuario+"->"+preorden(tmp.der)+";\n"
+		return tmp.usuario
+
+
 
 
 

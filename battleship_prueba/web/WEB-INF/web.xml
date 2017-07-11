@@ -8,6 +8,10 @@
         <servlet-name>graficar</servlet-name>
         <servlet-class>servlets.graficar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>grafica_abb</servlet-name>
+        <servlet-class>servlets.grafica_abb</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>cargar_usuario</servlet-name>
         <url-pattern>/crear_usuario</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>graficar</servlet-name>
         <url-pattern>/graficar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grafica_abb</servlet-name>
+        <url-pattern>/ver_abb</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

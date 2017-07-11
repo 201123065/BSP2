@@ -12,14 +12,17 @@
    </head>
   <body>
     <h1>Bienvenido a battleship</h1>
-        <div class="col-lg-12">
+    <div class="col-lg-4"></div>
+        <div class="col-lg-4">
         <form action="crear_usuario" nethod="post">
-            <p><h2>Usuario</h2><input type="text" name ="nombre" id="user"/></p>
-        <p><h2>password</h2><input type="text" name ="passwd" id="passwd"/></p>
-        <p><input type="submit" name="entrar" value="Entrar"/></p>
+            <p><h2>Usuario</h2><input type="text" name ="nombre" id="user" class="form-control"/></p>
+        <p><h2>password</h2><input type="text" name ="passwd" id="passwd" class="form-control"/></p>
+    <p><input type="submit" name="entrar" value="Entrar" class="btn-primary col-lg-12"/></p>
         </form>
-        <a href="crear_usuario.jsp">crear usuario</a>
+            <p>
+                <a href="crear_usuario.jsp"> o crear usuario</a></p> 
         </div>
+    <div class="col-lg-4"></div>
     
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -12,12 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import servlets.conexion;
 /**
  *
  * @author marcosmayen
  */
-public class cargar_usuario extends HttpServlet {
+public class grafica_abb extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,34 +31,18 @@ public class cargar_usuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String usu = request.getParameter("nombre");
-            String pass = request.getParameter("passwd");
             /* TODO output your page here. You may use following sample code. */
-            conexion cu = new conexion();
-            String user =cu.CrearUsuario(usu, pass);
-            if(user.equals("1")){
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>CARGO</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<a href=/>cu</a>");
-                out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
-                out.println("</body>");
-                out.println("</html>");
-            }else{
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>FRACASAO</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<a href=crear_usuario.jsp>cu</a>");
-                out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
-                out.println("</body>");
-                out.println("</html>");
-            }
+            conexion con = new conexion();
+            con.abb_user();
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet grafica_abb</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet grafica_abb at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
