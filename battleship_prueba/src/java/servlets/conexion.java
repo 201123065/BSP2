@@ -31,7 +31,7 @@ public class conexion {
      public static String getString(String metodo, RequestBody formBody) {
 
         try {
-            URL url = new URL("http://localhost:5000/metodo2");
+            URL url = new URL("http://localhost:5000/"+metodo);
             Request request = new Request.Builder().url(url).post(formBody).build();
             Response response = webClient.newCall(request).execute();//Aqui obtiene la respuesta en dado caso si hayas pues un return en python
             String response_string = response.body().string();//y este seria el string de las respuesta
@@ -44,21 +44,15 @@ public class conexion {
         return null;
     }
     
-    
-    protected void conexion(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            
-        String nombre = "Marco";
+    public String CrearUsuario(String nombre2, String passwd){ 
         RequestBody formBody = new FormEncodingBuilder()
-                .add("p", nombre)
-                .add("pa", nombre)
+                .add("nombre", nombre2)
+                .add("passwd", passwd)
                 .build();
         String r = getString("metodo2", formBody); 
         System.out.println(r + "---");
-            
-        }
+       
+        return r+"";
     }
     
 }

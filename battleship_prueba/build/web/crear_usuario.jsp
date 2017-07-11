@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 10-jul-2017, 17:46:35
+    Document   : crear_usuario
+    Created on : 10-jul-2017, 18:54:45
     Author     : marcosmayen
 --%>
 
@@ -12,12 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Crear usuario</h1>
         <form action="crear_usuario" nethod="post">
         <input type="text" name ="nombre" id="user"/>
         <input type="text" name ="passwd" id="passwd"/>
         <input type="submit" name="entrar" value="Entrar"/>
         </form>
-        <a href="crear_usuario.jsp">crear usuario</a>
     </body>
 </html>

@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import servlets.conexion;
+import servlets.graficador;
 /**
  *
  * @author marcosmayen
  */
-public class cargar_usuario extends HttpServlet {
+public class graficar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,21 +32,17 @@ public class cargar_usuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String usu = request.getParameter("nombre");
-            String pass = request.getParameter("passwd");
             /* TODO output your page here. You may use following sample code. */
-            conexion cu = new conexion();
-            String user =cu.CrearUsuario(usu, pass);
-            if(user.equals("1")){
-                response.sendRedirect("sesion_iniciada.jsp");
-            }
+            
+            graficador g = new graficador();
+            g.imagen("a->bbesooo;");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet cargar_usuario</title>");            
+            out.println("<title>Servlet graficar</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
+            out.println("<h1>Servlet graficar at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

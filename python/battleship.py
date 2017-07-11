@@ -5,9 +5,9 @@ app = Flask("ejemploJunio")
 
 @app.route('/metodo2',methods=['POST']) 
 def h():
-    parametroPython = str(request.form['p'])
-    parametroPython2 = str(request.form['pa'])
-    return "parametro = " + parametroPython
+    parametroPython = str(request.form['nombre'])
+    parametroPython2 = str(request.form['passwd'])
+    return "1"
 
 @app.route('/hola') 
 def he():
