@@ -12,12 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Bienvenido a battleship</h1>
+        <div class="col-lg-12">
         <form action="crear_usuario" nethod="post">
-        <input type="text" name ="nombre" id="user"/>
-        <input type="text" name ="passwd" id="passwd"/>
-        <input type="submit" name="entrar" value="Entrar"/>
+            <p>Usuario<input type="text" name ="nombre" id="user"/></p>
+        <p>password<input type="text" name ="passwd" id="passwd"/></p>
+        <p><input type="submit" name="entrar" value="Entrar"/></p>
         </form>
         <a href="crear_usuario.jsp">crear usuario</a>
+        </div>
     </body>
 </html>
