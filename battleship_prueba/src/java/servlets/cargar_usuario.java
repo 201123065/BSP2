@@ -38,17 +38,28 @@ public class cargar_usuario extends HttpServlet {
             conexion cu = new conexion();
             String user =cu.CrearUsuario(usu, pass);
             if(user.equals("1")){
-                response.sendRedirect("sesion_iniciada.jsp");
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>CARGO</title>");            
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<a href=crear_usuario.jsp>cu</a>");
+                out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
+                out.println("</body>");
+                out.println("</html>");
+            }else{
+                out.println("<!DOCTYPE html>");
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>FRACASAO</title>");            
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<a href=crear_usuario.jsp>cu</a>");
+                out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
+                out.println("</body>");
+                out.println("</html>");
             }
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet cargar_usuario</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 

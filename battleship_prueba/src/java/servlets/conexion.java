@@ -49,10 +49,32 @@ public class conexion {
                 .add("nombre", nombre2)
                 .add("passwd", passwd)
                 .build();
-        String r = getString("metodo2", formBody); 
+        String r = getString("crear_usuario", formBody); 
         System.out.println(r + "---");
        
         return r+"";
     }
+    
+    public String ModificarUsuario(String nombre2, String passwd){ 
+        RequestBody formBody = new FormEncodingBuilder()
+                .add("usuario", nombre2)
+                .build();
+        String r = getString("modificar_usuario", formBody); 
+        System.out.println(r + "---");
+       
+        return r+"";
+    }
+    
+    
+    public String EliminarUsuario(String nombre2, String passwd){ 
+        RequestBody formBody = new FormEncodingBuilder()
+                .add("usuario", nombre2)
+                .build();
+        String r = getString("eliminar_usuario", formBody); 
+        System.out.println(r + "---");
+       
+        return r+"";
+    }
+    
     
 }

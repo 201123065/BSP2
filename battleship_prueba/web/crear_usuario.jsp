@@ -14,8 +14,8 @@
     <body>
         <h1>Crear usuario</h1>
         <form action="crear_usuario" nethod="post">
-        <input type="text" name ="nombre" id="user"/>
-        <input type="text" name ="passwd" id="passwd"/>
+        Nombre<input type="text" name ="nombre" id="user"/>
+        Passwd<input type="text" name ="passwd" id="passwd"/>
         <input type="submit" name="entrar" value="Entrar"/>
         </form>
     </body>
