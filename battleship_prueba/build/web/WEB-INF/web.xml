@@ -16,6 +16,10 @@
         <servlet-name>super_usuario</servlet-name>
         <servlet-class>servlets.super_usuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProcessUpload</servlet-name>
+        <servlet-class>servlets.ProcessUpload</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>cargar_usuario</servlet-name>
         <url-pattern>/crear_usuario</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>super_usuario</servlet-name>
         <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessUpload</servlet-name>
+        <url-pattern>/upload</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

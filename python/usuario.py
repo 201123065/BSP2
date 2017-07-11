@@ -1,5 +1,5 @@
 from nodoUser import nodoUser
-
+from nodoJuegos import nodoJuegos
 class Usuario():
 	def __init__(self):
 		self.raiz=None
@@ -155,6 +155,31 @@ class Usuario():
 			derecho=self.preorden(tmp.der)
 			self.cadena=self.cadena+tmp.usuario+"->"+derecho+";\n"
 		return tmp.usuario
+
+	def cargar_partida(self,usuario,oponente,realizados,acertados,fallados,gana,recibidos):
+		temporal=self.raiz
+		while temporal!=None:
+			if temporal.usuario<usuario:
+				if temporal.der==None:
+					return "F"
+				temporal=temporal.der
+				
+			elif temporal.usuario>usuario:
+				if temporal.izq==None:
+					return "F"
+				temporal=temporal.izq
+
+			else:
+				nuevo = nodoJuegos(oponente,realizados,acertados,fallados,gana,recibidos,None)
+				if jugador.juego==None:
+					jugador.juego=nuevo
+				else:
+					nuevo.siguiente=jugador.juego
+					jugador.juego=nuevo
+				return "V"
+			
+		return "F"
+
 
 
 

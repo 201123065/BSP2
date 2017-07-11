@@ -45,6 +45,22 @@ def login_usuario():
 def abb_user():
 	return usuario.graficar_usuario()
 
+@app.route('/partida',methods=['POST'])
+def partida():
+	us=str(request.form['usuario']   )
+	op=str(request.form['oponente']  )
+	re=str(request.form['realizados'])
+	ac=str(request.form['acertados'] )
+	fa=str(request.form['fallados']  )
+	ga=str(request.form['gana']      )
+	re=str(request.form['recibidos'] )
+	return usuario.cargar_partida(us,op,re,ac,fa,ga,re)
+
+
+
+# GESTION DE ESCENARIO
+@
+
 
 
 if __name__ == "__main__":
