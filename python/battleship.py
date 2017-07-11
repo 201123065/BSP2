@@ -43,7 +43,6 @@ def login_usuario():
 
 @app.route('/abb_user',methods=['POST'])
 def abb_user():
-	print "si, llega aca"
 	return usuario.graficar_usuario()
 
 

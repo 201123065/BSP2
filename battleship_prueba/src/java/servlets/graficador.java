@@ -33,7 +33,7 @@ public class graficador {
             fw = new FileWriter(f);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
-            pw.write(agregarNodo(ruta));
+            pw.write(ruta);
             pw.close();
             bw.close();
             generar(cadena);

@@ -7,119 +7,111 @@ class Usuario():
 
 	def agregar(self,usuario,passwd,juego,su):
 		nuevo= nodoUser(usuario,passwd,False,juego,None,None,su)
-		if(self.raiz==None):
+		if self.raiz==None :
 			self.raiz=nuevo
 			return "V"
 		else:
-			temporal=self.raiz
-			while temporal!=None :
-				print temporal.usuario
-				if temporal.usuario>usuario:
-					if temporal.izq==None:
-						temporal.izq=nuevo
+			aux=self.raiz
+			while aux!=None:
+				print aux.usuario
+				if usuario>aux.usuario:
+					if aux.der==None:
+						aux.der=nuevo
 						return "V"
-					temporal=temporal.izq
-				elif temporal.usuario<usuario:
-					if temporal.der==None:
-						temporal.der=nuevo
+					aux=aux.der
+				elif usuario<aux.usuario:
+					if aux.izq==None:
+						aux.izq=nuevo
 						return "V"
-					temporal=temporal.der
-				elif temporal.usuario==usuario:
+					aux=aux.izq
+				else:
 					return "F"
-			temporal=nuevo
-		return "F"
+			return "F"
+
+
+
+
 	def eliminar(self,usuario):
 		temporal=self.raiz	
 		if self.raiz==None :
 			return "F"
 		else:
-			# si es la raiz
-			if temporal.usuario==usuario:
-				if temporal.izq==None and temporal.der==None:
-					self.raiz=None
-					return "V"
-				elif temporal.izq==None and temporal.der!=None:
-					self.raiz=self.raiz.der
-					return "V"
-				elif temporal.izq!=None and temporal.der==None:
-					self.raiz=self.raiz.izq
-					return "V"
+			aux=self.raiz
+			padre=None
+			while aux!=None:
+				print aux.usuario
+				if usuario>aux.usuario:
+					if aux.der==None:
+						return "F"
+					padre=aux
+					aux=aux.der
+				elif usuario<aux.usuario:
+					if aux.izq==None:
+						return "F"
+					padre=aux
+					aux=aux.izq
 				else:
-					temporal=self.raiz.izq
-					self.raiz=self.raiz.der
-					tmp=self.raiz
-					while tmp.izq!=None:
-						tmp=tmp.izq
-					tmp.izq=temporal
-					return "V"
-			# si no es la raiz
-			else:
-				previo = temporal
-				if temporal.usuario<usuario:
-					if temporal.der==None:
-						return "F"
-					temporal=temporal.der
-				elif temporal.usuario>usuario:
-					if temporal.izq==None:
-						return "F"
-					temporal=temporal.izq
-				while temporal!=None:
-					if temporal.usuario<usuario:
-						if temporal.der==None:
-							return "F"
-						previo=temporal
-						temporal=temporal.der
-					elif temporal.usuario>usuario:
-						if temporal.izq==None:
-							return "F"
-						previo=temporal
-						temporal=temporal.izq
-					else:
-						if previo.izq==temporal:
-							if temporal.izq==None and temporal.der==None:
-								previo.izq=None
-								return "V"
-							elif temporal.izq==None and temporal.der!=None:
-								previo.izq==temporal.der
-								return "V"
-							elif temporal.izq!=None and temporal.der==None:
-								previo.izq==temporal.izq
-								return "V"
-							else:
-								t2=temporal.izq
-								previo.izq=temporal.der
-								while previo.izq!=None:
-									previo=previo.izq
-								previo.izq=t2
-								return "V"
+					# cuando lo encuentra
+					# si es la raiz
+					if padre==None:
+						if self.raiz.der!=None and self.raiz.izq!=None:
+							padre=self.raiz.izq
+							self.raiz=self.raiz.der
+							tmp=self.raiz
+							while tmp.izq!=None:
+								tmp=tmp.izq
+							tmp.izq=padre
+						elif self.raiz.der==None and self.raiz.izq!=None:
+							self.raiz=self.raiz.izq
+						elif self.raiz.der!=None and self.raiz.izq==None:
+							self.raiz=self.raiz.der
 						else:
-							if temporal.izq==None and temporal.der==None:
-								previo.der=None
-								return "V"
-							elif temporal.izq==None and temporal.der!=None:
-								previo.der==temporal.der
-								return "V"
-							elif temporal.izq!=None and temporal.der==None:
-								previo.der==temporal.izq
-								return "V"
+							self.raiz=None
+
+					else:
+						if aux.izq==None and aux.der==None:
+							if padre.izq==aux:
+								padre.izq=None
 							else:
-								t2=temporal.izq
-								previo.der=temporal.der
-								while previo.izq!=None:
-									previo=previo.izq
-								previo.izq=t2
-								return "V"
+								padre.der=None
+						elif aux.izq==None and aux.der!=None:
+							if padre.izq==aux:
+								padre.izq=aux.der
+							else:
+								padre.der=aux.der
+						elif aux.izq!=None and aux.der==None:
+							if padre.izq==aux:
+								padre.izq=aux.izq
+							else:
+								padre.der=aux.izq
+						elif aux.izq!=None and aux.der!=None:
+							if padre.izq==aux:
+								temporal= aux.izq
+								padre.izq=aux.der
+								while padre.izq!=None:
+									padre=padre.izq
+								padre.izq=temporal
+							else:
+								temporal= aux.izq
+								padre.der=aux.der
+								while padre.izq!=None:
+									padre=padre.izq
+								padre.izq=temporal
+					return "V"
+			return "F"
 
 
-				return "F"
+
+
+
 
 	def modificar(self,usuario):
 		temporal=self.raiz
 		while temporal.usuario!=None:
 			if temporal.usuario==usuario:
 				tmp=temporal
-				eliminar(usuario)
-				agregar(usuario,tmp.passwd,tmp.juego,tmp.su)
+				self.eliminar(usuario)
+				self.agregar(usuario,tmp.passwd,tmp.juego,tmp.su)
 				return "V"
 			elif temporal.usuario>usuario:
 				temporal=temporal.izq
@@ -146,16 +138,22 @@ class Usuario():
 
 	def graficar_usuario(self):
 		print "entra"
+		nob=Usuario()
 		temporal=self.raiz
 		self.cadena=""
-		return preden(tmp)
+		resultado = self.preorden(temporal)
+		self.cadena="digraph G{"+self.cadena+"}"
+		print self.cadena
+		return self.cadena
 
-	def preorden(tmp):
-		print "tambien aca"
+	def preorden(self,tmp):
+		print self.cadena
 		if(tmp.izq!=None):
-			self.cadena=self.cadena+tmp.usuario+"->"+preorden(tmp.izq)+";\n"
+			izquierdo=self.preorden(tmp.izq)
+			self.cadena=self.cadena+tmp.usuario+"->"+izquierdo+";\n"
 		if(tmp.der!=None):	
-			self.cadena=self.cadena+tmp.usuario+"->"+preorden(tmp.der)+";\n"
+			derecho=self.preorden(tmp.der)
+			self.cadena=self.cadena+tmp.usuario+"->"+derecho+";\n"
 		return tmp.usuario
 
 

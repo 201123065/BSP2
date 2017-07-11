@@ -34,6 +34,8 @@ public class grafica_abb extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             conexion con = new conexion();
             String c = con.abb_user();
+            graficador g = new graficador();
+            g.imagen(c);
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");

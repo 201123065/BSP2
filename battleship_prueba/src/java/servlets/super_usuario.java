@@ -7,20 +7,17 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.mail.Session;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author marcosmayen
  */
-@WebServlet(name = "logea", urlPatterns = {"/login"})
-public class logea extends HttpServlet {
+import Vistas.header_footer;
+public class super_usuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,31 +32,12 @@ public class logea extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String usu = request.getParameter("nombre");
-            String pass = request.getParameter("passwd");
             /* TODO output your page here. You may use following sample code. */
-            conexion cu = new conexion();
-            
-             out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet logea</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println(cu.Login(usu, pass));
-            if(cu.Login(usu, pass).equals("V")){
-                out.println("<h1>SIMON ENTRO</h1>");
-                HttpSession session = request.getSession();
-                session.setAttribute("usuario", usu);
-                response.sendRedirect("/admin.jsp");
-            }
-            else{
-                out.println("<h1>anomano</h1>");
-            
-            }
-            out.println("<h1>Servlet logea at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            header_footer hf = new header_footer();
+            out.println(hf.getHeader());
+            out.println("<h2>hola ${sessionScope.usuario}</h2>");
+            out.println("<div class='col-lg-12'><p><h1>hola</h1></p></div>");
+            out.print(hf.getFooter());
         }
     }
 

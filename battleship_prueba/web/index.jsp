@@ -27,7 +27,7 @@
         </form>
             <p>
                 <a href="crear_usuario.jsp"> o crear usuario</a>
-            <a href="graficar" class="pull-right">ver arbol</a></p>
+            <a href="ver_abb" class="pull-right">ver arbol</a></p>
         </div>
     <div class="col-lg-4"></div>
     

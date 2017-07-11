@@ -87,7 +87,8 @@ public class conexion {
         return r+"";
     }
      public String abb_user(){ 
-        RequestBody formBody = new FormEncodingBuilder().build();
+        RequestBody formBody = new FormEncodingBuilder()
+                .add("nombre", "no").build();
         String r = getString("abb_user", formBody); 
         System.out.println(r + "---");
        
