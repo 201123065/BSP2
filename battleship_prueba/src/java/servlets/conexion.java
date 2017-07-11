@@ -88,7 +88,6 @@ public class conexion {
     }
      public String abb_user(){ 
         RequestBody formBody = new FormEncodingBuilder().build();
-         System.out.println("si.kpd2");
         String r = getString("abb_user", formBody); 
         System.out.println(r + "---");
        

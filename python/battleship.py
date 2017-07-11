@@ -41,8 +41,9 @@ def login_usuario():
 	passwd = str(request.form['passwd'])
 	return usuario.login(usu,passwd)
 
-@app.route('/abb_user')
+@app.route('/abb_user',methods=['POST'])
 def abb_user():
+	print "si, llega aca"
 	return usuario.graficar_usuario()
 
 

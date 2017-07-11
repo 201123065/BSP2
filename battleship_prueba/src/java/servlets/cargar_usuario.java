@@ -37,7 +37,6 @@ public class cargar_usuario extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             conexion cu = new conexion();
             String user =cu.CrearUsuario(usu, pass);
-            if(user.equals("1")){
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
@@ -45,22 +44,15 @@ public class cargar_usuario extends HttpServlet {
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<a href=crear_usuario.jsp>crear otro usuario</a>");
+            if(user.equals("1")){
                 out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
-                out.println("<a href=/>Iniciar sesion</a>");
-                out.println("</body>");
-                out.println("</html>");
             }else{
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>FRACASAO</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<a href=crear_usuario.jsp>cu</a>");
                 out.println("<h1>Servlet cargar_usuario at " + user + "</h1>");
+            }
+                out.println("<a href=/battleship_prueba/>Iniciar sesion</a>");
                 out.println("</body>");
                 out.println("</html>");
-            }
+            
         }
     }
 

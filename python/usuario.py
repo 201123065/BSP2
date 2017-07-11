@@ -145,9 +145,9 @@ class Usuario():
 		return "F"
 
 	def graficar_usuario(self):
+		print "entra"
 		temporal=self.raiz
 		self.cadena=""
-		print "entra"
 		return preden(tmp)
 
 	def preorden(tmp):

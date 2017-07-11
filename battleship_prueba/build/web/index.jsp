@@ -26,7 +26,8 @@
     <p><input type="submit" name="entrar" value="Entrar" class="btn-primary col-lg-12"/></p>
         </form>
             <p>
-                <a href="crear_usuario.jsp"> o crear usuario</a></p> 
+                <a href="crear_usuario.jsp"> o crear usuario</a>
+            <a href="graficar" class="pull-right">ver arbol</a></p>
         </div>
     <div class="col-lg-4"></div>
     

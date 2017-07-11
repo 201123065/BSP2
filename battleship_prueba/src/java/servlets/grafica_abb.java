@@ -33,7 +33,7 @@ public class grafica_abb extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             conexion con = new conexion();
-            con.abb_user();
+            String c = con.abb_user();
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
