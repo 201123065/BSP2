@@ -7,16 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap 101 Template</title>
-
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" scr="lector.js"></script>
+    
+    
+    <script>
+
+function processFiles(files) {
+var file = files[0];
+
+var reader = new FileReader();
+
+reader.onload = function (e) {
+// Cuando éste evento se dispara, los datos están ya disponibles.
+// Se trata de copiarlos a una área <div> en la página.
+var output = document.getElementById("fileOutput"); 
+output.textContent = pruebaCarga(e.target.result);
+};
+reader.readAsText(file);
+}
+
+        
+
+</script>
+    
+    
+    
+    
+    
    </head>
   <body>
       <h1>Administrador: "${sessionScope.usuario}"</h1>
     <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <table>
-                <tr><th><h2>tipo</h2></th><th><h2>archivo</h2></th><th><h2>cargar</h2></th><th><h2>ver</h2></th><tr>
+                <tr><th><h2>tipo</h2></th><th><h2>archivo</h2></th><th><h2>cargar</h2></th><th><h2 class="bottom-left">ver</h2></th><tr>
                 <tr>
                 <form action="load_user" name="formu_user" method="post" enctype="multipart/form-data">
                        
@@ -98,20 +123,37 @@
             </table>
             <input type="hidden" name="nombre" value=""/>
             <iframe name="if_usuario" style="display: none;"></iframe>
+          
             
-<input type="file" id="myFile" size="50">
-            <button id="loadfile" onclick="clickeo()">lrt</button>
             
-        </div>
-    <script>
-        
-        function clickeo(){
-    var x = document.getElementById("myFile").value;
-    document.getElementById("demo").innerHTML = x;
-}
-        
-        
-    </script>
+            
+<input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
+<div id="fileOutput"></div>
+            
+            
+            
+            
+<script>
+    
+        function pruebaCarga(str){
+            
+            $.ajax({
+                data:{
+                    'cadena':str
+                },
+                url:'usuario_csv',
+                type:'get',
+                success: function (data) {
+                        alert("si")
+                    }   
+            });
+        }
+    
+    
+</script>
+            
+            
+            
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script src="js/bootstrap.min.js"></script>

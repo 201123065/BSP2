@@ -156,6 +156,23 @@ class Usuario():
 			self.cadena=self.cadena+tmp.usuario+"->"+derecho+";\n"
 		return tmp.usuario
 
+	def verificar_SU(self,usuario):
+		tmp=self.raiz
+		while tmp!=None:
+			if tmp.usuario<usuario:
+				if tmp.der==None:
+					return "F"
+				tmp=tmp.der
+			elif tmp.usuario>usuario:
+				if tmp.izq==None:
+					return "F"
+				tmp=tmp.izq
+			else:
+				if tmp.su==True:
+					return "V"
+				return "F"
+
+		return "F"
 	def cargar_partida(self,usuario,oponente,realizados,acertados,fallados,gana,recibidos):
 		temporal=self.raiz
 		while temporal!=None:

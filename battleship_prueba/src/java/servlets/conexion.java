@@ -65,6 +65,15 @@ public class conexion {
         return r+"";
     }
     
+    public String getSuper(String usu){
+        RequestBody formBody = new FormEncodingBuilder()
+                .add("usuario", usu)
+                .build();
+        String r = getString("v_s_u", formBody); 
+        
+        return r+"";
+        
+    }
     
     public String EliminarUsuario(String nombre2, String passwd){ 
         RequestBody formBody = new FormEncodingBuilder()

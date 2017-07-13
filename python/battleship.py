@@ -7,23 +7,23 @@ app = Flask("ejemploJunio")
 
 usuario=Usuario()
 
-@app.route('/metodo2',methods=['POST']) 
-def h():
-    parametroPython = str(request.form['nombre'])
-    parametroPython2 = str(request.form['passwd'])
-    return "1"
-
-@app.route('/hola') 
-def he():
-    return "hola Mundo" 
-
 
 # GESTION DE USUARIOS
+@app.route('/v_s_u',methods=['POST'])
+def v_s_u():
+	usu = str(request.form['usuario'])
+	return usuario.verificar_SU(usu)
+
+
 @app.route('/crear_usuario',methods=['POST'])
 def crear_usuario():
 	usu = str(request.form['nombre'])
 	passwd = str(request.form['passwd'])
 	return usuario.agregar(usu,passwd,None,False)
+
+@app.route('/super_user')
+def superuser():
+	return usuario.agregar("admin","admin",None,True)
 
 @app.route('/modificar_usuario',methods=['POST'])
 def modificar_usuario():
@@ -59,7 +59,10 @@ def partida():
 
 
 # GESTION DE ESCENARIO
-@
+@app.route('/prueba')
+def prueba():
+	cad ='{"hola":"hai"}'
+	return cad
 
 
 

@@ -51,7 +51,15 @@ public class logea extends HttpServlet {
                 out.println("<h1>SIMON ENTRO</h1>");
                 HttpSession session = request.getSession();
                 session.setAttribute("usuario", usu);
-                response.sendRedirect("/admin.jsp");
+                    out.println(cu.getSuper(session.getId()));
+            out.println(cu.getSuper(session.getId()));
+                //if(cu.getSuper(session.getId()).equals("V")){
+                 //   response.sendRedirect("/battleship_prueba/admin.jsp");
+               // }
+                //else{
+                  //  response.sendRedirect("/battleship_prueba/Menu.jsp");
+                    
+                //}
             }
             else{
                 out.println("<h1>anomano</h1>");
