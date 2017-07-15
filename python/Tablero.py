@@ -7,6 +7,17 @@ class Tablero():
 		self.columna=0
 
 	def crear(self,x,y):
+		base_y=None
+		mueve=None
+		base=None
+		mueveY=None
+		mueveX=None
+		x=0
+		y=0
+		z=0
+
+
+
 		self.fila=x
 		self.columna=y
 		fila=0
