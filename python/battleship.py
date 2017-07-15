@@ -7,8 +7,9 @@ app = Flask("ejemploJunio")
 
 usuario=Usuario()
 
-
 # GESTION DE USUARIOS
+
+
 @app.route('/v_s_u',methods=['POST'])
 def v_s_u():
 	usu = str(request.form['usuario'])
@@ -61,8 +62,28 @@ def partida():
 # GESTION DE ESCENARIO
 @app.route('/prueba')
 def prueba():
-	cad ='{"hola":"hai"}'
-	return cad
+	for x in range(0,3):
+		print "0a3"
+	return "cad"
+
+
+# GESTION DE NAVES
+@app.route('/naves_csv',methods=['POST'])
+def drr():
+	return "true";
+
+@app.route('/cargar_nave',methods=['POST'])
+def cargar_naves():
+	jugador=str(request.form['jugador']   )
+	columna=str(request.form['columna']   )
+	fila=str(request.form['fila']   	  )
+	nivel=str(request.form['nivel']  	  )
+	modo=str(request.form['modo']   	  )
+	direccion=str(request.form['direccion']   )
+	return "true"
+
+
+
 
 
 

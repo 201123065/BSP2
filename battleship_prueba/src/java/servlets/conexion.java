@@ -114,6 +114,16 @@ public class conexion {
         return r+"";
          
      }
+     
+     public String CrearTablero(int fila,int columna){
+         RequestBody formBody = new FormEncodingBuilder()
+                .add("nombre", "no").build();
+        String r = getString("tablero", formBody); 
+        System.out.println(r + "---");
+       
+        return r+"";
+         
+     }
     
     
 }

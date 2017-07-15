@@ -27,7 +27,7 @@ function processNaves(files) {
     var reader = new FileReader();
     reader.onload = function (e) {
         var output = document.getElementById("fileOutput"); 
-        output.textContent = pruebaCarga(e.target.result,"nave_csv");
+        output.textContent = pruebaCarga(e.target.result,"CSV_naves");
     };
     reader.readAsText(file);
 }
