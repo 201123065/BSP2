@@ -91,14 +91,12 @@ function processTiros(files) {
     <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <table>
-                <tr><th><h2>tipo</h2></th><th><h2>archivo</h2></th><th><h2>ver</h2></th></th><tr>
+                <tr><th><h2>tipo</h2></th><th><h2>archivo</h2></th></th></th><tr>
                 <tr>
                 <form action="load_user" name="formu_user" method="post" enctype="multipart/form-data">
                        
                     <td><h3>Usuarios</h3></td>
-                    
                     <td><input id="fileInput" type="file" size="50" onchange="processUser(this.files)"></td>
-                        <td><input type="submit" name="btn_usuario" value="procesar"  class="btn-primary"/></td>
                     </form>
                     <iframe name="if_user" style="display: none;"></iframe>
                 
@@ -107,9 +105,7 @@ function processTiros(files) {
                 <tr>
                     <form action="load_ship" name="formu_ship" method="post">
                         <td><h3>Naves</h3></td>
-                        <td><input type="file" name ="nombre" id="user" /></td>
-                        <td><input type="submit" name="btn_user"value="procesar" class="btn-primary"/></td>
-                        <td></td>
+                        <td><input id="fileInput" type="file" size="50" onchange="processNaves(this.files)"></td>
                     </form>
                     <input type="hidden" name="it_ship" value=""/>
                     <iframe name="if_ship" style="display: none;"></iframe>
@@ -118,9 +114,7 @@ function processTiros(files) {
                 <tr>
                 <form action="load_game" name="formu_juego" method="post">
                         <td><h3>Juegos</h3></td>
-                        <td><input type="file" name ="nombre" id="user" /></td>
-                        <td><input type="submit" value="procesar" class="btn-primary"/></td>
-                        <td></td>
+                        <td><input id="fileInput" type="file" size="50" onchange="processJuegos(this.files)"></td>
                     </form>
                     <input type="hidden" name="it_game" value=""/>
                     <iframe name="if_game" style="display: none;"></iframe>
@@ -129,8 +123,7 @@ function processTiros(files) {
                 <tr>
                 <form action="actual_match" name="formu_partida" method="post">
                         <td><h3>Partida actual</h3></td>
-                        <td><input type="file" name ="nombre" id="user" /></td>
-                        <td><input type="submit" value="procesar" class="btn-primary"/></td>
+                        <td><input id="fileInput" type="file" size="50" onchange="processPartida(this.files)"></td>
                     </form>
                     <input type="hidden" name="it_match" value=""/>
                     <iframe name="if_match" style="display: none;"></iframe>
@@ -140,8 +133,7 @@ function processTiros(files) {
                 <form action="history" name="formu_historial" method="post">
         
                         <td><h3>Historial</h3></td>
-                        <td><input type="file" name ="nombre" id="user" /></td>
-                        <td><input type="submit" value="procesar" class="btn-primary"/></td>
+                        <td><input id="fileInput" type="file" size="50" onchange="processHistorial(this.files)"></td>
                     </form>
                     <input type="hidden" name="it_history" value=""/>
                     <iframe name="if_history" style="display: none;"></iframe>
@@ -152,8 +144,7 @@ function processTiros(files) {
                 <form action="contact" name="formu_contactos" method="post">
         
                         <td><h3>Contactos</h3></td>
-                        <td><input type="file" name ="nombre" id="user" /></td>
-                        <td><input type="submit" value="procesar" class="btn-primary"/></td>
+                        <td><input id="fileInput" type="file" size="50" onchange="processContactos(this.files)"></td>
                     </form>
                     <input type="hidden" name="it_contact" value=""/>
                     <iframe name="if_contact" style="display: none;"></iframe>
@@ -162,9 +153,7 @@ function processTiros(files) {
                 <tr>
                 <form action="shoots" name="formu_disparos" method="post">
                         <td><h3>Tiros</h3></td>
-                        <td><input type="file" name ="nombre" id="user_shoot" /></td>
-                        <td><input type="submit" value="procesar" class="btn-primary"/></td>
-                        <td></td>
+                        <td><input id="fileInput" type="file" size="50" onchange="processTiros(this.files)"></td>
                     </form>
                     <input type="hidden" name="it_shoot" value=""/>
                     <iframe name="if_shoot" style="display: none;"></iframe>

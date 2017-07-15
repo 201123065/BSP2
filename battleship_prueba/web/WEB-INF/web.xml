@@ -28,6 +28,26 @@
         <servlet-name>CSV_naves</servlet-name>
         <servlet-class>CSV.CSV_naves</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CSV_juegos</servlet-name>
+        <servlet-class>CSV.CSV_juegos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CSV_partida</servlet-name>
+        <servlet-class>CSV.CSV_partida</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CSV_historial</servlet-name>
+        <servlet-class>CSV.CSV_historial</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CSV_contactos</servlet-name>
+        <servlet-class>CSV.CSV_contactos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CSV_tiros</servlet-name>
+        <servlet-class>CSV.CSV_tiros</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>cargar_usuario</servlet-name>
         <url-pattern>/crear_usuario</url-pattern>
@@ -55,6 +75,26 @@
     <servlet-mapping>
         <servlet-name>CSV_naves</servlet-name>
         <url-pattern>/CSV_naves</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CSV_juegos</servlet-name>
+        <url-pattern>/juego_csv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CSV_partida</servlet-name>
+        <url-pattern>/partida_csv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CSV_historial</servlet-name>
+        <url-pattern>/historial_csv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CSV_contactos</servlet-name>
+        <url-pattern>/contactos_csv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CSV_tiros</servlet-name>
+        <url-pattern>/tiros_csv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
