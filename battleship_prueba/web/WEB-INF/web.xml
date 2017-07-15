@@ -22,7 +22,11 @@
     </servlet>
     <servlet>
         <servlet-name>CSV_usuarios</servlet-name>
-        <servlet-class>servlets.CSV_usuarios</servlet-class>
+        <servlet-class>CSV.CSV_usuarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CSV_naves</servlet-name>
+        <servlet-class>CSV.CSV_naves</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>cargar_usuario</servlet-name>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>CSV_usuarios</servlet-name>
         <url-pattern>/usuario_csv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CSV_naves</servlet-name>
+        <url-pattern>/CSV_naves</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

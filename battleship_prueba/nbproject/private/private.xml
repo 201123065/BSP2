@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/web/crear_usuario.jsp</file>
-            <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/src/java/servlets/conexion.java</file>
-            <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/src/java/servlets/graficador.java</file>
+            <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/src/java/servlets/logea.java</file>
             <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/src/java/servlets/cargar_usuario.java</file>
             <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/web/index.jsp</file>
-            <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/src/java/servlets/grafica_abb.java</file>
-            <file>file:/Users/marcosmayen/Desktop/BSP2/battleship_prueba/src/java/servlets/graficar.java</file>
         </group>
     </open-files>
 </project-private>

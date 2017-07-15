@@ -104,6 +104,16 @@ public class conexion {
         return r+"";
     }
     
+     
+     public String CargarNave(String jugador, String columna,String fila,String nivel, String modo,String direccion){
+        RequestBody formBody = new FormEncodingBuilder()
+                .add("nombre", "no").build();
+        String r = getString("cargar_nave", formBody); 
+        System.out.println(r + "---");
+       
+        return r+"";
+         
+     }
     
     
 }

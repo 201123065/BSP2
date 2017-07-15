@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class crear_005fusuario_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -30,7 +30,7 @@ public final class crear_005fusuario_jsp extends org.apache.jasper.runtime.HttpJ
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF8");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -45,33 +45,14 @@ public final class crear_005fusuario_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
-      out.write("<html lang=\"en\">\n");
-      out.write("  <head>\n");
-      out.write("    <meta charset=\"utf-8\">\n");
-      out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
-      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
-      out.write("    <title>Bootstrap 101 Template</title>\n");
-      out.write("\n");
-      out.write("    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
-      out.write("\n");
-      out.write("   </head>\n");
-      out.write("  <body>\n");
-      out.write("      <div clas=\"col-lg-6\"></div>\n");
-      out.write("      <div class=\"col-lg-4\">\n");
-      out.write("        <h1>Crear usuario</h1>\n");
-      out.write("        <form action=\"crear_usuario\" nethod=\"post\">\n");
-      out.write("            <p>Nombre<input type=\"text\" name =\"nombre\" id=\"user\"/></p>\n");
-      out.write("            <p>Passwd<input type=\"text\" name =\"passwd\" id=\"passwd\"/></p>\n");
-      out.write("            <p><input type=\"submit\" name=\"crear\" value=\"Crear\" class=\"btn-primary col-lg-8\"/></p>\n");
-      out.write("        </form>\n");
-      out.write("        </div>\n");
-      out.write("      <div class=\"col-lg-4\"></div>\n");
-      out.write("      \n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>JSP Page</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <h1>Hello World!</h1>\n");
       out.write("    </body>\n");
-      out.write("    \n");
-      out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n");
-      out.write("     <script src=\"js/bootstrap.min.js\"></script>\n");
-      out.write("  </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlets;
+package CSV;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,12 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import servlets.conexion;
 
 /**
  *
  * @author marcosmayen
  */
-public class CSV_usuarios extends HttpServlet {
+public class CSV_naves extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,27 +31,24 @@ public class CSV_usuarios extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        
         try (PrintWriter out = response.getWriter()) {
+           
             response.setContentType("text/plain");
+            
             String []csv = request.getParameter("cadena").split("\n");
             conexion con= new conexion();
-            for(int i=1;i<csv.length;i++){
+            for(int i=1;i<csv.length-1;i++){
                 String user[]=csv[i].split(",");
-                con.CrearUsuario(user[0],user[1]);
+                
+                con.CargarNave(user[0],user[1],user[2],user[3],user[4],user[5]);
                 
             }
             System.out.println(csv[0]);
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CSV_usuarios</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CSV_usuarios at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
         }
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

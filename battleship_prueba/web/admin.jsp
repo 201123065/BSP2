@@ -13,18 +13,68 @@
     
     <script>
 
-function processFiles(files) {
-var file = files[0];
-
-var reader = new FileReader();
-
-reader.onload = function (e) {
-// Cuando éste evento se dispara, los datos están ya disponibles.
-// Se trata de copiarlos a una área <div> en la página.
-var output = document.getElementById("fileOutput"); 
-output.textContent = pruebaCarga(e.target.result);
-};
-reader.readAsText(file);
+function processUser(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput"); 
+        output.textContent = pruebaCarga(e.target.result,"usuario_csv");
+    };
+    reader.readAsText(file);
+}
+function processNaves(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput"); 
+        output.textContent = pruebaCarga(e.target.result,"nave_csv");
+    };
+    reader.readAsText(file);
+}
+function processJuegos(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput"); 
+        output.textContent = pruebaCarga(e.target.result,"juego_csv");
+    };
+    reader.readAsText(file);
+}
+function processPartida(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput"); 
+        output.textContent = pruebaCarga(e.target.result,"partida_csv");
+    };
+    reader.readAsText(file);
+}
+function processHistorial(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput"); 
+        output.textContent = pruebaCarga(e.target.result,"historial_csv");
+    };
+    reader.readAsText(file);
+}
+function processContactos(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput"); 
+        output.textContent = pruebaCarga(e.target.result,"contactos_csv");
+    };
+    reader.readAsText(file);
+}
+function processTiros(files) {
+    var file = files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var output = document.getElementById("fileOutput"); 
+        output.textContent = pruebaCarga(e.target.result,"tiros_csv");
+    };
+    reader.readAsText(file);
 }
 
         
@@ -41,16 +91,15 @@ reader.readAsText(file);
     <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <table>
-                <tr><th><h2>tipo</h2></th><th><h2>archivo</h2></th><th><h2>cargar</h2></th><th><h2 class="bottom-left">ver</h2></th><tr>
+                <tr><th><h2>tipo</h2></th><th><h2>archivo</h2></th><th><h2>ver</h2></th></th><tr>
                 <tr>
                 <form action="load_user" name="formu_user" method="post" enctype="multipart/form-data">
                        
                     <td><h3>Usuarios</h3></td>
-                    <td><input type="file" name ="nombre" value="cargar" id="ipnput_usu" /></td>
+                    
+                    <td><input id="fileInput" type="file" size="50" onchange="processUser(this.files)"></td>
                         <td><input type="submit" name="btn_usuario" value="procesar"  class="btn-primary"/></td>
-                        <td></td>
                     </form>
-                    <input type="hidden" name="it_user" value=""/>
                     <iframe name="if_user" style="display: none;"></iframe>
                 
                 </tr>
@@ -127,21 +176,18 @@ reader.readAsText(file);
             
             
             
-<input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
-<div id="fileOutput"></div>
             
             
             
             
 <script>
     
-        function pruebaCarga(str){
-            
+        function pruebaCarga(str,url){
             $.ajax({
                 data:{
                     'cadena':str
                 },
-                url:'usuario_csv',
+                url:url,
                 type:'get',
                 success: function (data) {
                         alert("si")
