@@ -14,11 +14,13 @@ class Tablero():
 		y=0
 		z=0
 		base_y=None
+		base_x=None
 		raiz=None
-		mueve=None
+		mueveX=None
 		mueveY=None
 		base=None
 		mueve=None
+		fan=None
 		while x<fila:
 			while y<columna:
 				while z<4:
@@ -27,9 +29,11 @@ class Tablero():
 						self.tablero=casilla
 						base=self.tablero
 						mueve=self.tablero
-						mueve=self.tablero
+						mueveX=self.tablero
 						mueveY=self.tablero
 						base_y=self.tablero
+						base_x=self.tablero
+						fan=self.tablero
 					else:
 						if y==0 and x==0:
 							mueve.up=casilla
@@ -43,36 +47,41 @@ class Tablero():
 								mueve=mueve.frente
 								base=mueve
 								mueveY=base
+								base_y=base
 							else:
 								casilla.down=mueve
 								mueve.up=casilla
+								mueveX=mueveX.up
 								mueve=mueve.up
-								mueve=mueve.up
-								mueve.tras=mueve
-								mueve.frente=mueve
+								mueve.tras=mueveX
+								mueveX.frente=mueve
 						elif x==0:
 							if z==0:
+								mueve=base_x
 								mueve.der=casilla
 								casilla.izq=mueve
 								mueve=mueve.der
+								base_x=mueve
 							else:
 								casilla.down=mueve
 								mueve.up=casilla
 								mueve=mueve.up
-								mueve=mueve.up
-								mueve.izq=mueve
-								mueve.der=mueve
+								mueveX=mueveX.up
+								mueve.izq=mueveX
+								mueveX.der=mueve
 						else:
 							if z==0:
 								mueve=base_y
-								mueve=mueve.der
+								mueveY=base_y
+								mueveX=base_x.der
+								base_x=base_x.der
 								mueveY=base_y
 								mueve.der=casilla
 								casilla.izq=mueve
 								mueve=mueve.der
 								base_y=mueve
 							else:
-								# mueve=mueve.up
+								mueveX=mueveX.up
 								mueveY=mueveY.up
 								mueve.up=casilla
 								casilla.down=mueve
@@ -80,23 +89,40 @@ class Tablero():
 								mueveY.der=mueve
 								mueve.izq=mueveY
 
-							mueve.frente=mueve
-							mueve.tras=mueve	
+							mueveX.frente=mueve
+							mueve.tras=mueveX	
 
 					z=z+1
 				z=0
 				y=y+1
-			mueve=base
-			mueve=base
+			mueveX=base
 			mueveY=base
 			base_y=base
+			base_x=base
+			mueve=base
 			y=0
 			x=x+1
 
 		return "v"
 
 	def ver_matriz(self):
-		return self.tablero.up.valor
+		cadena=""
+		x=0
+		y=0
+		z=0
+		tmp=self.tablero
+		while x<self.fila:
+			while y<self.columna:
+				while z<4:
+					
+					z=z+1
+				z=0
+				y=y+1
+			y=0
+			x=x+1
+			cadena=cadena+"\n"
+		return cadena
+		
 
 
 

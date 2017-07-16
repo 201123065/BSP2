@@ -2,11 +2,12 @@
 from flask import Flask, request
 
 from usuario import Usuario
-
+from Tablero import Tablero
 app = Flask("ejemploJunio")
 
 usuario=Usuario()
 
+battlefield=Tablero()
 # GESTION DE USUARIOS
 
 
@@ -60,11 +61,12 @@ def partida():
 
 
 # GESTION DE ESCENARIO
+
+
 @app.route('/prueba')
 def prueba():
-	for x in range(0,3):
-		print "0a3"
-	return "cad"
+	battlefield.battlefield(2,2)
+	return battlefield.ver_matriz()
 
 
 # GESTION DE NAVES
